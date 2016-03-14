@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>TestApp_Dul/EndDeviceEB</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>212</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>16</ColumnWidth0><ColumnWidth1>809</ColumnWidth1><ColumnWidth2>215</ColumnWidth2><ColumnWidth3>53</ColumnWidth3></Build>
+    <TerminalIO/><Find-in-Files><ColumnWidth0>389</ColumnWidth0><ColumnWidth1>55</ColumnWidth1><ColumnWidth2>776</ColumnWidth2></Find-in-Files><Debug-Log><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>1140</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-7874-15781</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>TestApp_Dul</ExpandedNode><ExpandedNode>TestApp_Dul/App</ExpandedNode><ExpandedNode>TestApp_Dul/App/ExtHAL</ExpandedNode><ExpandedNode>TestApp_Dul/ZMain</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-24081-20595</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-31487-10408</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-713-24681</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\oneWire\dht11\dht11.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>517</SelStart><SelEnd>517</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\oneWire\ds18b20\ds18b20.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>3077</SelStart><SelEnd>3077</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\oneWire\oneWire.c</Filename><XPos>0</XPos><YPos>69</YPos><SelStart>1894</SelStart><SelEnd>1894</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\oneWire\oneWire.h</Filename><XPos>0</XPos><YPos>12</YPos><SelStart>753</SelStart><SelEnd>753</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\SOURCE\ExtHAL\oneWire\ds18b20\ds18b20.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>599</SelStart><SelEnd>599</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\TestApp.c</Filename><XPos>0</XPos><YPos>196</YPos><SelStart>7590</SelStart><SelEnd>7590</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>139</YPos><SelStart>4789</SelStart><SelEnd>4789</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\oneWire\dht11\dht11.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>555</SelStart><SelEnd>555</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL_Clock.c</Filename><XPos>0</XPos><YPos>45</YPos><SelStart>3156</SelStart><SelEnd>3156</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>969</YPos><SelStart>25709</SelStart><SelEnd>25709</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\OSAL_TestApp.c</Filename><XPos>0</XPos><YPos>91</YPos><SelStart>2565</SelStart><SelEnd>2565</SelEnd></Tab><ActiveTab>10</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ZComDef.h</Filename><XPos>0</XPos><YPos>29</YPos><SelStart>8172</SelStart><SelEnd>8172</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\mt\MT_UART.c</Filename><XPos>0</XPos><YPos>85</YPos><SelStart>4637</SelStart><SelEnd>4637</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00bfd920><key>iaridepm.enu1</key></Toolbar-00bfd920></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>779</Bottom><Right>286</Right><x>-2</x><y>-2</y><xscreen>198</xscreen><yscreen>161</yscreen><sizeHorzCX>149773</sizeHorzCX><sizeHorzCY>163452</sizeHorzCY><sizeVertCX>217852</sizeVertCX><sizeVertCY>792893</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>161</Bottom><Right>1324</Right><x>-2</x><y>-2</y><xscreen>1326</xscreen><yscreen>163</yscreen><sizeHorzCX>1003026</sizeHorzCX><sizeHorzCY>165482</sizeHorzCY><sizeVertCX>149773</sizeVertCX><sizeVertCY>163452</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\TestApp_Dul.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>CoordinatorEB-Pro</configuration>
+      </member>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>RouterEB-Pro</configuration>
+      </member>
+      <member>
+        <project>TestApp_Dul</project>
+        <configuration>EndDeviceEB-Pro</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>TestApp/EndDeviceEB</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>191</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>16</ColumnWidth0><ColumnWidth1>809</ColumnWidth1><ColumnWidth2>215</ColumnWidth2><ColumnWidth3>53</ColumnWidth3></Build>
+    <TerminalIO/><Find-in-Files><ColumnWidth0>389</ColumnWidth0><ColumnWidth1>55</ColumnWidth1><ColumnWidth2>776</ColumnWidth2></Find-in-Files><Debug-Log><ColumnWidth0>16</ColumnWidth0><ColumnWidth1>1140</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-7874-15781</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>TestApp</ExpandedNode><ExpandedNode>TestApp/App</ExpandedNode><ExpandedNode>TestApp/Tools</ExpandedNode><ExpandedNode>TestApp/ZMain</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-24081-20595</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-31487-10408</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-713-24681</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL_PwrMgr.c</Filename><XPos>0</XPos><YPos>88</YPos><SelStart>3987</SelStart><SelEnd>3987</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\TestApp.c</Filename><XPos>0</XPos><YPos>370</YPos><SelStart>15369</SelStart><SelEnd>15369</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\TestApp.h</Filename><XPos>0</XPos><YPos>15</YPos><SelStart>2709</SelStart><SelEnd>2709</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>962</YPos><SelStart>25549</SelStart><SelEnd>25549</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\stack\zdo\ZDApp.c</Filename><XPos>0</XPos><YPos>276</YPos><SelStart>3035</SelStart><SelEnd>3035</SelEnd></Tab><ActiveTab>4</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\stack\af\AF.c</Filename><XPos>0</XPos><YPos>459</YPos><SelStart>14871</SelStart><SelEnd>14871</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>115</YPos><SelStart>4125</SelStart><SelEnd>4125</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\stack\zdo\ZDConfig.c</Filename><XPos>0</XPos><YPos>19</YPos><SelStart>6568</SelStart><SelEnd>6568</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\STACK\ZDO\ZDConfig.h</Filename><XPos>0</XPos><YPos>53</YPos><SelStart>5914</SelStart><SelEnd>5927</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\Components\stack\zdo\ZDProfile.c</Filename><XPos>0</XPos><YPos>1247</YPos><SelStart>41147</SelStart><SelEnd>41147</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDProfile.h</Filename><XPos>0</XPos><YPos>627</YPos><SelStart>24546</SelStart><SelEnd>24546</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\OSAL_TestApp.c</Filename><XPos>0</XPos><YPos>78</YPos><SelStart>3961</SelStart><SelEnd>3961</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\stack\nwk\NLMEDE.h</Filename><XPos>0</XPos><YPos>249</YPos><SelStart>6146</SelStart><SelEnd>6146</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\DHT11.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2375</SelStart><SelEnd>2375</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\DHT11.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>185</SelStart><SelEnd>185</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\DS18B20.c</Filename><XPos>0</XPos><YPos>51</YPos><SelStart>2042</SelStart><SelEnd>2042</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Source\ExtHAL\DS18B20.h</Filename><XPos>0</XPos><YPos>51</YPos><SelStart>2491</SelStart><SelEnd>2494</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\COMPONENTS\STACK\AF\AF.h</Filename><XPos>0</XPos><YPos>212</YPos><SelStart>8004</SelStart><SelEnd>8004</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00bfedc8><key>iaridepm.enu1</key></Toolbar-00bfedc8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>783</Bottom><Right>265</Right><x>-2</x><y>-2</y><xscreen>184</xscreen><yscreen>161</yscreen><sizeHorzCX>139183</sizeHorzCX><sizeHorzCY>163452</sizeHorzCY><sizeVertCX>201967</sizeVertCX><sizeVertCY>796954</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>157</Bottom><Right>1324</Right><x>-2</x><y>-2</y><xscreen>1326</xscreen><yscreen>159</yscreen><sizeHorzCX>1003026</sizeHorzCX><sizeHorzCY>161421</sizeHorzCY><sizeVertCX>139183</sizeVertCX><sizeVertCY>163452</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

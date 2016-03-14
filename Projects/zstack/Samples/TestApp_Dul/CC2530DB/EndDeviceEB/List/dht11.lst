@@ -1,0 +1,193 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         07/Mar/2016  09:15:34 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\Source\ExtHAL\oneWire\dht11\dht11.c #
+#    Command line       =  -f "E:\Work Codes\ZigBee\Network\Projects\zstack\S #
+#                          amples\TestApp_Dul\CC2530DB\..\..\..\Tools\CC2530D #
+#                          B\f8wEndev.cfg" (-DCPU32MHZ -DROOT=__near_func     #
+#                          -DBLINK_LEDS) -f "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. #
+#                          cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0             #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFB                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\Source\ExtHAL\oneWire\dht11\dht11. #
+#                          c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK -D     #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -D DHT11 -D   #
+#                          DS18B20 -lC "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\EndDeviceEB\L #
+#                          ist\" -lA "E:\Work Codes\ZigBee\Network\Projects\z #
+#                          stack\Samples\TestApp_Dul\CC2530DB\EndDeviceEB\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o "E:\Work        #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\EndDeviceEB\Obj\" -e --debug       #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\" -I "E:\Work                      #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\SOURCE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\SOURCE\ExtHAL\oneWire\" -I      #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\SOURCE\ExtHAL\oneWire\ #
+#                          dht11\" -I "E:\Work Codes\ZigBee\Network\Projects\ #
+#                          zstack\Samples\TestApp_Dul\CC2530DB\..\SOURCE\ExtH #
+#                          AL\oneWire\ds18b20\" -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I       #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \MT\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\HAL\INCLUDE\" -I "E:\Work                #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARG #
+#                          ET\CC2530EB\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU #
+#                          \CCSOC\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\OSAL\INCLUDE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\NWK\" -I "E:\Work                     #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SE #
+#                          C\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\SAPI\" -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SY #
+#                          S\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\ZDO\" -I "E:\Work                    #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES #
+#                          \SADDR\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\SERVICES\SDATA\" -I "E:\Work          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCL #
+#                          UDE\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\MAC\HIGH_LEVEL\" -I "E:\Work             #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\SINGLE_CHIP\" -Ohz                     #
+#                          --require_prototypes                               #
+#    List file          =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\EndDeviceEB\List\dht11.lst #
+#    Object file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\EndDeviceEB\Obj\dht11.r51  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\Work Codes\ZigBee\Network\Projects\zstack\Samples\TestApp_Dul\Source\ExtHAL\oneWire\dht11\dht11.c
+      1          /**
+      2             ************************************************************************
+      3             * @file		dht11.c	
+      4             * @author	RQY
+      5             * @version V1.0
+      6             * @date		2016-01-30
+      7             * @brief		这个文件提供操作DHT11的函数实现
+      8             *************************************************************************
+      9             */
+     10          
+     11          /* Define to prevent recursive inclusion ---------------------------------*/
+     12          #include "dht11.h"
+     13          
+     14          /**
+     15            * @brief	初始化DHT11
+     16            * @param	无
+     17            * @return	unsigned char: 若初始化DHT11成功，则返回owSuccess；否则，返回owFailure
+     18            */
+     19          unsigned char dht11Init(void)
+     20          {
+     21          	gpio();
+     22          	inputMode();
+     23          	pullUp();
+     24          	
+     25          	configOneWire(0, 6, P0_6);
+     26          	
+     27          	oneWireReset(20, 30);
+     28          	return oneWireCheck(1, owTRUE, owTRUE);
+     29          }
+     30          
+     31          /**
+     32            * @brief	读取dht11的数据
+     33            * @param	temp: dht11的温度数据
+     34          	* @param	humi: dht11的湿度数据
+     35            * @return	unsigned char: 若读取数据成功，返回owSuccess; 否则，返回owFailure
+     36            */
+     37          unsigned char dht11ReadData(unsigned char *temp, unsigned char *humi)     
+     38          {         
+     39           	unsigned char buf[5] = {0}; 
+     40          	unsigned char i;
+     41          	
+     42          	oneWireReset(20, 30);
+     43          	
+     44          	if ( oneWireCheck(1, owTRUE) == owSuccess ) 
+                 	                           ^
+Error[Pe165]: too few arguments in function call
+     45          	{ 
+     46          		for ( i = 0; i < 5; i++ )		//read 40-bits data 
+     47          		{ 
+     48          			buf[i] = oneWireRead( owFLASE, owTRUE );// first MSB, 1-wire slave ouput read time-slot
+     49          		}
+     50          		
+     51          		if (( buf[0] + buf[1] + buf[2] + buf[3] ) == buf[4]) 
+     52          		{ 
+     53          			*humi = buf[0]; 
+     54          			*temp = buf[2]; 
+     55          		}
+     56          	}
+     57          	else 
+     58          		return owFailure;
+     59          	
+     60          	return owSuccess;	     
+     61          }
+
+Errors: 1
+Warnings: none

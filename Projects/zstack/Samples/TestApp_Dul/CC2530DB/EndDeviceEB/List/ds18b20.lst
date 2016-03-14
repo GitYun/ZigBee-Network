@@ -1,0 +1,275 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         07/Mar/2016  09:15:33 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\Source\ExtHAL\oneWire\ds18b20\ds18b #
+#                          20.c                                               #
+#    Command line       =  -f "E:\Work Codes\ZigBee\Network\Projects\zstack\S #
+#                          amples\TestApp_Dul\CC2530DB\..\..\..\Tools\CC2530D #
+#                          B\f8wEndev.cfg" (-DCPU32MHZ -DROOT=__near_func     #
+#                          -DBLINK_LEDS) -f "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. #
+#                          cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0             #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFB                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\Source\ExtHAL\oneWire\ds18b20\ds18 #
+#                          b20.c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK    #
+#                          -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                 #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -D DHT11 -D   #
+#                          DS18B20 -lC "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\EndDeviceEB\L #
+#                          ist\" -lA "E:\Work Codes\ZigBee\Network\Projects\z #
+#                          stack\Samples\TestApp_Dul\CC2530DB\EndDeviceEB\Lis #
+#                          t\" --diag_suppress Pe001,Pa010 -o "E:\Work        #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\EndDeviceEB\Obj\" -e --debug       #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\" -I "E:\Work                      #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\SOURCE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\SOURCE\ExtHAL\oneWire\" -I      #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\SOURCE\ExtHAL\oneWire\ #
+#                          dht11\" -I "E:\Work Codes\ZigBee\Network\Projects\ #
+#                          zstack\Samples\TestApp_Dul\CC2530DB\..\SOURCE\ExtH #
+#                          AL\oneWire\ds18b20\" -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I       #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \MT\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\HAL\INCLUDE\" -I "E:\Work                #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARG #
+#                          ET\CC2530EB\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU #
+#                          \CCSOC\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\OSAL\INCLUDE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\NWK\" -I "E:\Work                     #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SE #
+#                          C\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\SAPI\" -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SY #
+#                          S\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\ZDO\" -I "E:\Work                    #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES #
+#                          \SADDR\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\SERVICES\SDATA\" -I "E:\Work          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCL #
+#                          UDE\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\MAC\HIGH_LEVEL\" -I "E:\Work             #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\SINGLE_CHIP\" -Ohz                     #
+#                          --require_prototypes                               #
+#    List file          =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\EndDeviceEB\List\ds18b20.l #
+#                          st                                                 #
+#    Object file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\EndDeviceEB\Obj\ds18b20.r5 #
+#                          1                                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\Work Codes\ZigBee\Network\Projects\zstack\Samples\TestApp_Dul\Source\ExtHAL\oneWire\ds18b20\ds18b20.c
+      1          /**
+      2             *******************************************************************
+      3             * @file		ds18b20.c
+      4             * @author	RQY
+      5             * @version	V1.0
+      6             * @date		2016-01-30
+      7             * @brief		这个文件包含操作ds18b20的所有函数实现
+      8             *******************************************************************
+      9             */
+     10          
+     11          /* Define to prevent recursive inclusion ----------------------------*/
+     12          #include "ds18b20.h"
+     13          
+     14          /** DS18B20 Gobal Variable */
+     15          unsigned char preAccuracyVlaue = DEFAULT;
+     16          
+     17          /**
+     18          	* @brief	初始化DS18B20
+     19          	* @param	无 
+     20          	* @return	unsigned char: 若单总线上存在DS18B20，则返回owSucess；否则，返回owFailure
+     21          	*/
+     22          unsigned char dsInit(void)
+     23          {
+     24          	gpio();						// P0_6 used as GPIO function
+     25          	outputMode();			// output mode
+     26          	pullUp();					// pull-up
+     27          	
+     28          	configOneWire(0, 7, P0_7);
+     29          	
+     30          	oneWireReset(500, 30);
+     31          	return oneWireCheck(1, owFLASE);
+                 	                              ^
+Error[Pe165]: too few arguments in function call
+     32          }
+     33          
+     34          /**
+     35          	* @brief	读取DS18B20的温度数据
+     36          	* @param	outputAccuracy: 控制温度输出的精度，此参数可以为一下值：
+     37          	*		@arg HALF: 输出精度为0.5摄氏度
+     38          	*		@arg QUARTER: 输出精度为0.25摄氏度
+     39          	*		@arg EIGHTH: 输出精度为0.125摄氏度
+     40          	*		@arg SIXTEENTH: 输出精度为0.0625摄氏度
+     41          	* @return	float: DS18B20的温度数据 
+     42          	*/
+     43          float dsReadT(unsigned char outputAccuracy)
+     44          {
+     45          	unsigned char TH, TL, Config;
+     46          	unsigned char temp1, temp2;
+     47          	unsigned int temp3;
+     48          	signed int temp4;
+     49          	float result;
+     50          	
+     51          	if ( (preAccuracyVlaue != outputAccuracy) && outputAccuracy < 4 )
+     52          	{
+     53          		do
+     54          		{
+     55          			oneWireReset(500, 30);
+     56          			if ( oneWireCheck(1, owFLASE) == owFailure )
+                 			                            ^
+Error[Pe165]: too few arguments in function call
+     57          				return ( -10000.0 );
+     58          			oneWireWrite( READ_REG );
+     59          			(void)oneWireRead( owTRUE, owFLASE);	// first LSB, 1-wire bus master output read time-slot
+     60          			(void)oneWireRead( owTRUE, owFLASE );
+     61          			TH = oneWireRead( owTRUE, owFLASE );
+     62          			TL = oneWireRead( owTRUE, owFLASE );
+     63          			Config = oneWireRead( owTRUE, owFLASE );
+     64          			
+     65          			if ( (Config & 0x60) != outputAccuracy )
+     66          			{
+     67          				oneWireReset(500, 30);
+     68          				if (oneWireCheck(1, owFLASE) == owFailure )
+                 				                           ^
+Error[Pe165]: too few arguments in function call
+     69          					return ( -10000.0 );
+     70          				oneWireWrite( WRITE_REG );
+     71          				oneWireWrite( TH );
+     72          				oneWireWrite( TL );
+     73          				oneWireWrite( outputAccuracy );
+     74          			}
+     75          			else
+     76          			{
+     77          				preAccuracyVlaue = outputAccuracy;	// 保存DS18B20的上一次输出精度配置值
+     78          			}
+     79          		} while ( preAccuracyVlaue != outputAccuracy );
+     80          	}
+     81          	
+     82          	oneWireReset(500, 30);
+     83          	if ( oneWireCheck(1, owFLASE) == owFailure )
+                 	                            ^
+Error[Pe165]: too few arguments in function call
+     84          		return ( -10000.0 );
+     85          	oneWireWrite(SKIP_ROM);
+     86          	oneWireWrite(CONVERT_T);
+     87          	
+     88          /*
+     89           * The master can issue read time slots after the Convert T command and
+     90           * the DS18B20 will respond by transmitting a 0 while the temperature 
+     91           * conversion is in progress and a 1 when the conversion is done.
+     92           */	
+     93          	while (oneWireRead( owTRUE, owFLASE ) == 0);	// check the DS18B20 if busy?
+     94          	
+     95          	oneWireReset(500, 30);
+     96          	if ( oneWireCheck(1, owFLASE) == owFailure )
+                 	                            ^
+Error[Pe165]: too few arguments in function call
+     97          		return (-10000.0);
+     98          	oneWireWrite(SKIP_ROM);
+     99          	oneWireWrite(READ_REG);
+    100          	temp1 = oneWireRead( owTRUE, owFLASE );		// Temperature LSB(50h)
+    101          	temp2 = oneWireRead( owTRUE, owFLASE );		// Temperature MSB(05h)
+    102          	temp3 = (unsigned int)( (temp2 << 8) | temp1);
+    103          	
+    104          	if (temp2 & 0xF0)		// Temperature has a sign bits, it is negtive temperature.
+    105          		// When it is negtive, data is binary complement, so covert it to binary source code.
+    106          		temp4 = ((temp3^0x7FFF) + 0x0001);
+    107          	else
+    108          		temp4 = (signed int)temp3;
+    109          	
+    110          	switch ( outputAccuracy )
+    111          	{
+    112          		case HALF: 
+    113          			result = (float)(temp4 * 0.5);	// Calculation for DS18S20 with 0.5 deg C resolution
+    114          			//result = (float)temp3 / 2.0;
+    115          			break;
+    116          		case QUARTER:
+    117          			result = (float)(temp4 * 0.25);
+    118          			break;
+    119          		case EIGHTH:
+    120          			result = (float)(temp4 * 0.125);
+    121          			break;
+    122          		case SIXTEENTH:
+    123          			result = (float)(temp4 * 0.0625);	// Calculation for DS18B20 with 0.0625 deg C resolution.		
+    124          			//result = (float)temp3 / 16.0;
+    125          			break;
+    126          		default:
+    127          			result = -10000.0;
+    128          			break;
+    129          	}
+    130          		
+    131          	return result;
+    132          }
+
+Errors: 5
+Warnings: none

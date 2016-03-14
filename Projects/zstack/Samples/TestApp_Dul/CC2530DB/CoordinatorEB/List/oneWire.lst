@@ -1,0 +1,748 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         28/Jan/2016  17:04:42 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\Source\ExtHAL\oneWire\oneWire.c     #
+#    Command line       =  -f "E:\Work Codes\ZigBee\Network\Projects\zstack\S #
+#                          amples\TestApp_Dul\CC2530DB\..\..\..\Tools\CC2530D #
+#                          B\f8wCoord.cfg" (-DCPU32MHZ -DROOT=__near_func     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\..\..\Tools\CC2530DB\f #
+#                          8wConfig.cfg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0    #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFB                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\Source\ExtHAL\oneWire\oneWire.c"   #
+#                          -D ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D         #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC "E:\Work   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\CoordinatorEB\List\" -lA "E:\Work  #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\CoordinatorEB\List\"               #
+#                          --diag_suppress Pe001,Pa010 -o "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\CoordinatorEB\Obj\" -e --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\" -I "E:\Work                      #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\SOURCE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I       #
+#                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Samp #
+#                          les\TestApp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \MT\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\HAL\INCLUDE\" -I "E:\Work                #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARG #
+#                          ET\CC2530EB\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU #
+#                          \CCSOC\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\OSAL\INCLUDE\" -I "E:\Work            #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\NWK\" -I "E:\Work                     #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SE #
+#                          C\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\SAPI\" -I "E:\Work                   #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SY #
+#                          S\" -I "E:\Work Codes\ZigBee\Network\Projects\zsta #
+#                          ck\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COM #
+#                          PONENTS\STACK\ZDO\" -I "E:\Work                    #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W #
+#                          \" -I "E:\Work Codes\ZigBee\Network\Projects\zstac #
+#                          k\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES #
+#                          \SADDR\" -I "E:\Work Codes\ZigBee\Network\Projects #
+#                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\SERVICES\SDATA\" -I "E:\Work          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCL #
+#                          UDE\" -I "E:\Work Codes\ZigBee\Network\Projects\zs #
+#                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\MAC\HIGH_LEVEL\" -I "E:\Work             #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\" -I "E:\Work                          #
+#                          Codes\ZigBee\Network\Projects\zstack\Samples\TestA #
+#                          pp_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_ #
+#                          LEVEL\srf04\SINGLE_CHIP\" -Ohz                     #
+#                          --require_prototypes                               #
+#    List file          =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\CoordinatorEB\List\oneWire #
+#                          .lst                                               #
+#    Object file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Sampl #
+#                          es\TestApp_Dul\CC2530DB\CoordinatorEB\Obj\oneWire. #
+#                          r51                                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\Work Codes\ZigBee\Network\Projects\zstack\Samples\TestApp_Dul\Source\ExtHAL\oneWire\oneWire.c
+      1          /**
+      2             *******************************************************************
+      3             * @file		oneWire.c
+      4             * @author	RQY
+      5             * @version	V0.1
+      6             * @date		2016-01-30
+      7             * @brief		这个文件提供操作单总线传感器的函数
+      8             *******************************************************************
+      9             */
+     10          
+     11          /* Includes ---------------------------------------------------------*/
+     12          #include "oneWire.h"
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     13          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     14          unsigned char	PORT;
+   \                     PORT:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     15          unsigned char PIN;
+   \                     PIN:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          unsigned char PX_Y;
+   \                     PX_Y:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     17          
+     18          /**
+     19          	* @brief	复位单总线器件
+     20          	* @param	pullLowTime: 复位单总线器件所需要的低电平脉冲的持续时间
+     21          	* @param	pullHighTime: 释放单总线所持续的时间
+     22          	* @return	无
+     23          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void oneWireReset(unsigned int pullLowTime, unsigned int pullHighTime)
+   \                     oneWireReset:
+     25          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+     26          	outputMode();
+   \   00000D   75..01       MOV     ?V0 + 2,#0x1
+   \   000010   75..00       MOV     ?V0 + 3,#0x0
+   \   000013   90....       MOV     DPTR,#PIN
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   78..         MOV     R0,#?V0 + 2
+   \   000019   12....       LCALL   ?S_SHL
+   \   00001C   E5..         MOV     A,?V0 + 2
+   \   00001E   42FD         ORL     0xfd,A
+     27          	outputHigh();
+     28          	delay_us(50);
+   \   000020                ; Setup parameters for call to function delay_us
+   \   000020   7A32         MOV     R2,#0x32
+   \   000022   7B00         MOV     R3,#0x0
+   \   000024   12....       LCALL   ??delay_us?relay
+     29          	outputLow();							// pull the 1-wire bus low
+     30          	delay_us(pullLowTime);		// pull the 1-wire bus low for reset pulse,  at least 480us
+   \   000027                ; Setup parameters for call to function delay_us
+   \   000027   AA..         MOV     R2,?V0 + 0
+   \   000029   AB..         MOV     R3,?V0 + 1
+   \   00002B   12....       LCALL   ?Subroutine1 & 0xFFFF
+     31          	outputHigh();							// pull the 1-wire bus high for releases the bus
+     32          	delay_us(pullHighTime);		// wait-out remaining initialisation window.
+   \                     ??CrossCallReturnLabel_0:
+   \   00002E                ; Setup parameters for call to function delay_us
+   \   00002E   EE           MOV     A,R6
+   \   00002F   FA           MOV     R2,A
+   \   000030   EF           MOV     A,R7
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   ??delay_us?relay
+     33          }
+   \   000035   7F04         MOV     R7,#0x4
+   \   000037   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00003A                REQUIRE P0DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ??delay_us?relay
+   \   000003   90....       MOV     DPTR,#PX_Y
+   \   000006   7401         MOV     A,#0x1
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   22           RET
+     34          
+     35          /**
+     36          	* @brief	检测单总线上是否有器件存在
+     37          	* @param	waitRspTime: 等待单总线器件发出响应信号的时间
+     38          	* @param	isSlavePullHigh: 单总线发出响应信号后，总线是否被单总线器件拉高；
+     39          			此参数可为一下两个值：
+     40          	*			@arg owTRUE: 单总线被器件主动拉高
+     41          	*			@arg owFLASE:	单总线被上拉电阻拉高
+     42          	* @return	unsigned char: 若单总线上存在器件，则返回owSuccess；否则，返回owFailure
+     43          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          unsigned char oneWireCheck(unsigned int waitRspTime, unsigned char isSlavePullHigh)
+   \                     oneWireCheck:
+     45          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+     46          	unsigned char retry = 0;
+   \   000007   7E00         MOV     R6,#0x0
+     47          	
+     48          	delay_us(waitRspTime);
+   \   000009                ; Setup parameters for call to function delay_us
+   \   000009   12....       LCALL   ??delay_us?relay
+     49          	// Slave response ouput low level
+     50          	while ( readPin() && retry < 100)
+   \   00000C   90....       MOV     DPTR,#PX_Y
+   \   00000F   E0           MOVX    A,@DPTR
+   \   000010   6012         JZ      ??oneWireCheck_0
+     51          	{
+     52          		retry++;
+   \                     ??oneWireCheck_1:
+   \   000012   0E           INC     R6
+     53          		delay_us(1);
+   \   000013                ; Setup parameters for call to function delay_us
+   \   000013   7A01         MOV     R2,#0x1
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   12....       LCALL   ??delay_us?relay
+   \   00001A   EE           MOV     A,R6
+   \   00001B   C3           CLR     C
+   \   00001C   9464         SUBB    A,#0x64
+   \   00001E   40F2         JC      ??oneWireCheck_1
+     54          	}
+     55          	if (retry >= 100)
+     56          		return owFailure;
+   \                     ??oneWireCheck_2:
+   \   000020   7901         MOV     R1,#0x1
+   \   000022   801F         SJMP    ??oneWireCheck_3
+     57          	
+     58          	if (isSlavePullHigh)
+   \                     ??oneWireCheck_0:
+   \   000024   EF           MOV     A,R7
+   \   000025   6010         JZ      ??oneWireCheck_4
+     59          	{
+     60          		retry = 0;
+     61          		while (!readPin() && retry < 100)
+     62          		{
+     63          			retry++;
+   \                     ??oneWireCheck_5:
+   \   000027   0E           INC     R6
+     64          			delay_us(1);
+   \   000028                ; Setup parameters for call to function delay_us
+   \   000028   7A01         MOV     R2,#0x1
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   12....       LCALL   ??delay_us?relay
+   \   00002F   EE           MOV     A,R6
+   \   000030   C3           CLR     C
+   \   000031   9464         SUBB    A,#0x64
+   \   000033   50EB         JNC     ??oneWireCheck_2
+   \   000035   80F0         SJMP    ??oneWireCheck_5
+     65          		}
+     66          		if (retry >= 100)
+     67          			return owFailure;
+     68          	}
+     69          	else
+     70          	{
+     71          		outputHigh();		// releases the bus.
+   \                     ??oneWireCheck_4:
+   \   000037   7401         MOV     A,#0x1
+   \   000039   F0           MOVX    @DPTR,A
+     72          		delay_us(100);
+   \   00003A                ; Setup parameters for call to function delay_us
+   \   00003A   7A64         MOV     R2,#0x64
+   \   00003C   7B00         MOV     R3,#0x0
+   \   00003E   12....       LCALL   ??delay_us?relay
+     73          	}
+     74          	
+     75          	return owSuccess;
+   \   000041   7900         MOV     R1,#0x0
+   \                     ??oneWireCheck_3:
+   \   000043                REQUIRE ?Subroutine0
+   \   000043                ; // Fall through to label ?Subroutine0
+     76          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     77          
+     78          /**
+     79          	* @brief	写一字节到单总线器件
+     80          	* @param	data: 写到单总线器件中的数据
+     81          	* @return	无
+     82          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     83          void oneWireWrite(unsigned char data)
+   \                     oneWireWrite:
+     84          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     85          	int count;
+     86          	
+     87          	for (count = 0; count < 8; count++)
+   \   000005   90....       MOV     DPTR,#PX_Y
+   \   000008   7401         MOV     A,#0x1
+   \   00000A   F0           MOVX    @DPTR,A
+   \   00000B   7E08         MOV     R6,#0x8
+     88          	{
+     89          		outputLow();
+     90          		delay_us(2);				// pull the 1-wire bus low to initiate write time-slot.
+   \                     ??oneWireWrite_0:
+   \   00000D                ; Setup parameters for call to function delay_us
+   \   00000D   7A02         MOV     R2,#0x2
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   ??delay_us?relay
+     91          		if ( data & 0x01 )
+     92          			outputHigh();			// releases the bus for write 1 to the Slave.
+     93          		delay_us(30);				// wait until end of write slot.
+   \   000014                ; Setup parameters for call to function delay_us
+   \   000014   7A1E         MOV     R2,#0x1e
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   12....       LCALL   ??delay_us?relay
+     94          		outputHigh();				// set the 1-wire bus high again for releases the bus.		
+     95          		delay_us(2);				// for more than 1us minimum.
+   \   00001B                ; Setup parameters for call to function delay_us
+   \   00001B   7A02         MOV     R2,#0x2
+   \   00001D   7B00         MOV     R3,#0x0
+   \   00001F   12....       LCALL   ??delay_us?relay
+     96          		data >>= 1;
+     97          	}
+   \   000022   1E           DEC     R6
+   \   000023   EE           MOV     A,R6
+   \   000024   70E7         JNZ     ??oneWireWrite_0
+     98          	delay_us(5);
+   \   000026                ; Setup parameters for call to function delay_us
+   \   000026   7A05         MOV     R2,#0x5
+   \   000028   7B00         MOV     R3,#0x0
+   \   00002A   12....       LCALL   ??delay_us?relay
+     99          }
+   \   00002D   80..         SJMP    ?Subroutine0
+    100          
+    101          /**
+    102          	* @brief	从单总线器件中读一字节
+    103          	* @param	isLSB: 读出的数据是否低位在先，
+    104          			这个参数值可以是owTRUE，或者owFLASE
+    105          	* @param	isSlaveOutputReadTimeSlot: 单总线器件是否主动发出读时序，
+    106          			这个参数值可以是owTRUE，或者owFLASE
+    107          	* @return	unsigned char: 从单总线器件中读出的数据
+    108          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    109          unsigned char oneWireRead(unsigned char isLSB, unsigned char isSlaveOutputReadTimeSlot)
+   \                     oneWireRead:
+    110          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+   \   000007   8A..         MOV     ?V0 + 2,R2
+    111          	unsigned char count, retry = 0;
+   \   000009   7F00         MOV     R7,#0x0
+    112          	unsigned char data = 0;
+   \   00000B   7E00         MOV     R6,#0x0
+    113          	
+    114          	for (count = 0; count < 8; count++)
+   \   00000D   75..08       MOV     ?V0 + 0,#0x8
+    115          	{		
+    116          		if (isSlaveOutputReadTimeSlot)
+   \                     ??oneWireRead_0:
+   \   000010   E5..         MOV     A,?V0 + 2
+   \   000012   6030         JZ      ??oneWireRead_1
+    117          		{
+    118          			while (readPin() && retry < 100)	// wait the slave output read time-slot
+   \   000014   90....       MOV     DPTR,#PX_Y
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   700A         JNZ     ??oneWireRead_2
+   \   00001A   800E         SJMP    ??oneWireRead_3
+    119          			{
+    120          				retry++;
+   \                     ??oneWireRead_4:
+   \   00001C   0F           INC     R7
+    121          				delay_us(1);
+   \   00001D                ; Setup parameters for call to function delay_us
+   \   00001D   7A01         MOV     R2,#0x1
+   \   00001F   7B00         MOV     R3,#0x0
+   \   000021   12....       LCALL   ??delay_us?relay
+   \                     ??oneWireRead_2:
+   \   000024   EF           MOV     A,R7
+   \   000025   C3           CLR     C
+   \   000026   9464         SUBB    A,#0x64
+   \   000028   40F2         JC      ??oneWireRead_4
+    122          			}
+    123          			retry = 0;
+   \                     ??oneWireRead_3:
+   \   00002A   7F00         MOV     R7,#0x0
+    124          			
+    125          			while (!readPin() && retry < 100)
+   \   00002C   90....       MOV     DPTR,#PX_Y
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   700E         JNZ     ??oneWireRead_5
+    126          			{
+    127          				retry++;
+   \                     ??oneWireRead_6:
+   \   000032   0F           INC     R7
+    128          				delay_us(1);
+   \   000033                ; Setup parameters for call to function delay_us
+   \   000033   7A01         MOV     R2,#0x1
+   \   000035   7B00         MOV     R3,#0x0
+   \   000037   12....       LCALL   ??delay_us?relay
+   \   00003A   EF           MOV     A,R7
+   \   00003B   C3           CLR     C
+   \   00003C   9464         SUBB    A,#0x64
+   \   00003E   40F2         JC      ??oneWireRead_6
+    129          			}
+    130          			delay_us(30);	
+   \                     ??oneWireRead_5:
+   \   000040                ; Setup parameters for call to function delay_us
+   \   000040   7A1E         MOV     R2,#0x1e
+   \   000042   8009         SJMP    ??oneWireRead_7
+    131          		}
+    132          		else
+    133          		{
+    134          			outputLow();
+    135          			delay_us(2);			// pull the 1-wire bus low to initiate read time-slot.			
+   \                     ??oneWireRead_1:
+   \   000044                ; Setup parameters for call to function delay_us
+   \   000044   7A02         MOV     R2,#0x2
+   \   000046   7B00         MOV     R3,#0x0
+   \   000048   12....       LCALL   ?Subroutine1 & 0xFFFF
+    136          			outputHigh();			// now let the 1-wire bus high for sample data of the Slave.
+    137          			delay_us(8);			// let device state stabilise.
+   \                     ??CrossCallReturnLabel_1:
+   \   00004B                ; Setup parameters for call to function delay_us
+   \   00004B   7A08         MOV     R2,#0x8
+   \                     ??oneWireRead_7:
+   \   00004D   7B00         MOV     R3,#0x0
+   \   00004F   12....       LCALL   ??delay_us?relay
+    138          		}
+    139          		
+    140          		if ( isLSB )
+   \   000052   E5..         MOV     A,?V0 + 1
+   \   000054   6005         JZ      ??oneWireRead_8
+    141          			data >>= 1;			// LSB first.
+   \   000056   EE           MOV     A,R6
+   \   000057   C3           CLR     C
+   \   000058   13           RRC     A
+   \   000059   8003         SJMP    ??oneWireRead_9
+    142          		else 
+    143          			data <<= 1;			// MSB first
+   \                     ??oneWireRead_8:
+   \   00005B   EE           MOV     A,R6
+   \   00005C   C3           CLR     C
+   \   00005D   33           RLC     A
+   \                     ??oneWireRead_9:
+   \   00005E   FE           MOV     R6,A
+    144          		
+    145          		if ( readPin() == 1 )
+   \   00005F   90....       MOV     DPTR,#PX_Y
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   6401         XRL     A,#0x1
+   \   000065   7004         JNZ     ??oneWireRead_10
+    146          			data |= 0x80;
+   \   000067   EE           MOV     A,R6
+   \   000068   D2E7         SETB    0xE0 /* A   */.7
+   \   00006A   FE           MOV     R6,A
+    147          		delay_us(60);			// wait until end of read slot.
+   \                     ??oneWireRead_10:
+   \   00006B                ; Setup parameters for call to function delay_us
+   \   00006B   7A3C         MOV     R2,#0x3c
+   \   00006D   7B00         MOV     R3,#0x0
+   \   00006F   12....       LCALL   ??delay_us?relay
+    148          		//data >>= 1;			// error		
+    149          	}
+   \   000072   15..         DEC     ?V0 + 0
+   \   000074   E5..         MOV     A,?V0 + 0
+   \   000076   7098         JNZ     ??oneWireRead_0
+    150          	
+    151          	return data;
+   \   000078   EE           MOV     A,R6
+   \   000079   F9           MOV     R1,A
+   \   00007A   7F03         MOV     R7,#0x3
+   \   00007C   02....       LJMP    ?BANKED_LEAVE_XDATA
+    152          }
+    153          
+    154          
+    155          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    156          void configOneWire(unsigned char port, unsigned char pin, unsigned char px_y)
+   \                     configOneWire:
+    157          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    158          	PORT = port;
+   \   000004   E9           MOV     A,R1
+   \   000005   90....       MOV     DPTR,#PORT
+   \   000008   F0           MOVX    @DPTR,A
+    159          	PIN = pin;
+   \   000009   EA           MOV     A,R2
+   \   00000A   90....       MOV     DPTR,#PIN
+   \   00000D   F0           MOVX    @DPTR,A
+    160          	PX_Y = px_y;
+   \   00000E   EB           MOV     A,R3
+   \   00000F   90....       MOV     DPTR,#PX_Y
+   \   000012   F0           MOVX    @DPTR,A
+    161          }
+   \   000013   D083         POP     DPH
+   \   000015   D082         POP     DPL
+   \   000017   02....       LJMP    ?BRET
+    162          
+    163          /**
+    164          	* @brief	微妙延时
+    165          	* @param	us: 需要延时的时间
+    166          	* @return	无
+    167          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    168          void delay_us(unsigned int us)
+   \                     delay_us:
+    169          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8004         SJMP    ??delay_us_0
+    170          	while ( us-- )
+    171          	{
+    172          			asm("NOP");
+   \                     ??delay_us_1:
+   \   000002   00           NOP
+    173          			asm("NOP");
+   \   000003   00           NOP
+    174          			asm("NOP");
+   \   000004   00           NOP
+    175          			asm("NOP");
+   \   000005   00           NOP
+    176          	}
+   \                     ??delay_us_0:
+   \   000006   EA           MOV     A,R2
+   \   000007   F8           MOV     R0,A
+   \   000008   EB           MOV     A,R3
+   \   000009   F9           MOV     R1,A
+   \   00000A   E8           MOV     A,R0
+   \   00000B   24FF         ADD     A,#-0x1
+   \   00000D   1A           DEC     R2
+   \   00000E   E9           MOV     A,R1
+   \   00000F   34FF         ADDC    A,#-0x1
+   \   000011   FB           MOV     R3,A
+   \   000012   E8           MOV     A,R0
+   \   000013   49           ORL     A,R1
+   \   000014   70EC         JNZ     ??delay_us_1
+    177          }
+   \   000016   02....       LJMP    ?BRET
+    178          
+    179          /**
+    180          	* @brief	微妙延时
+    181          	* @param	ms: 需要延时的时间
+    182          	* @return	无
+    183          	*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    184          void delay_ms(unsigned int ms)
+   \                     delay_ms:
+    185          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8007         SJMP    ??delay_ms_0
+    186          	while ( ms-- )
+    187          	{
+    188          		delay_us(1000);
+   \                     ??delay_ms_1:
+   \   00000B                ; Setup parameters for call to function delay_us
+   \   00000B   7AE8         MOV     R2,#-0x18
+   \   00000D   7B03         MOV     R3,#0x3
+   \   00000F   12....       LCALL   ??delay_us?relay
+    189          	}
+   \                     ??delay_ms_0:
+   \   000012   EE           MOV     A,R6
+   \   000013   F8           MOV     R0,A
+   \   000014   EF           MOV     A,R7
+   \   000015   F9           MOV     R1,A
+   \   000016   E8           MOV     A,R0
+   \   000017   24FF         ADD     A,#-0x1
+   \   000019   1E           DEC     R6
+   \   00001A   E9           MOV     A,R1
+   \   00001B   34FF         ADDC    A,#-0x1
+   \   00001D   FF           MOV     R7,A
+   \   00001E   E8           MOV     A,R0
+   \   00001F   49           ORL     A,R1
+   \   000020   70E9         JNZ     ??delay_ms_1
+    190          }
+   \   000022   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??oneWireReset?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    oneWireReset
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??oneWireCheck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    oneWireCheck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??oneWireWrite?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    oneWireWrite
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??oneWireRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    oneWireRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??configOneWire?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    configOneWire
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_ms
+    191          
+    192          
+    193          
+    194          
+    195          
+    196          
+    197          
+
+   Maximum stack usage in bytes:
+
+     Function      ISTACK PSTACK XSTACK
+     --------      ------ ------ ------
+     configOneWire     2      0      0
+     delay_ms          0      0      9
+       -> delay_us     0      0     18
+     delay_us          0      0     12
+     oneWireCheck      0      0      9
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+     oneWireRead       0      0     11
+       -> delay_us     0      0     22
+       -> delay_us     0      0     22
+       -> delay_us     0      0     22
+       -> delay_us     0      0     22
+       -> delay_us     0      0     22
+       -> delay_us     0      0     22
+     oneWireReset      0      0     12
+       -> delay_us     0      0     24
+       -> delay_us     0      0     24
+       -> delay_us     0      0     24
+     oneWireWrite      0      0      9
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+       -> delay_us     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     P0DIR                    1
+     PORT                     1
+     PIN                      1
+     PX_Y                     1
+     oneWireReset            58
+     ?Subroutine1            10
+     oneWireCheck            67
+     ?Subroutine0             5
+     oneWireWrite            47
+     oneWireRead            127
+     configOneWire           26
+     delay_us                25
+     delay_ms                37
+     ??oneWireReset?relay     6
+     ??oneWireCheck?relay     6
+     ??oneWireWrite?relay     6
+     ??oneWireRead?relay      6
+     ??configOneWire?relay    6
+     ??delay_us?relay         6
+     ??delay_ms?relay         6
+
+ 
+ 402 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+   3 bytes in segment XDATA_Z
+ 
+ 444 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 1 byte shared)
+   3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

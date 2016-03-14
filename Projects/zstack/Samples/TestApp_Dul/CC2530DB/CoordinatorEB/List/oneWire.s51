@@ -1,0 +1,1295 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        28/Jan/2016  17:04:42 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\Work Codes\ZigBee\Network\Projects\zstack\Samp /
+//                          les\TestApp_Dul\Source\ExtHAL\oneWire\oneWire.c   /
+//    Command line       =  -f "E:\Work Codes\ZigBee\Network\Projects\zstack\ /
+//                          Samples\TestApp_Dul\CC2530DB\..\..\..\Tools\CC253 /
+//                          0DB\f8wCoord.cfg" (-DCPU32MHZ -DROOT=__near_func  /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f      /
+//                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Sam /
+//                          ples\TestApp_Dul\CC2530DB\..\..\..\Tools\CC2530DB /
+//                          \f8wConfig.cfg" (-DSECURE=0                       /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFB                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "E:\Work                   /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\Source\ExtHAL\oneWire\oneWire.c" -D       /
+//                          ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D           /
+//                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC "E:\Work  /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\CoordinatorEB\List\" -lA         /
+//                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Sam /
+//                          ples\TestApp_Dul\CC2530DB\CoordinatorEB\List\"    /
+//                          --diag_suppress Pe001,Pa010 -o "E:\Work           /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\CoordinatorEB\Obj\" -e --debug   /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I "E:\Work                  /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\" -I "E:\Work                    /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\SOURCE\" -I "E:\Work          /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I     /
+//                          "E:\Work Codes\ZigBee\Network\Projects\zstack\Sam /
+//                          ples\TestApp_Dul\CC2530DB\..\..\..\..\..\COMPONEN /
+//                          TS\MT\" -I "E:\Work Codes\ZigBee\Network\Projects /
+//                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\ /
+//                          ..\COMPONENTS\HAL\INCLUDE\" -I "E:\Work           /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TA /
+//                          RGET\CC2530EB\" -I "E:\Work                       /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\M /
+//                          CU\CCSOC\" -I "E:\Work Codes\ZigBee\Network\Proje /
+//                          cts\zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\ /
+//                          ..\..\COMPONENTS\OSAL\INCLUDE\" -I "E:\Work       /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
+//                          AF\" -I "E:\Work Codes\ZigBee\Network\Projects\zs /
+//                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\ /
+//                          COMPONENTS\STACK\NWK\" -I "E:\Work                /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
+//                          SEC\" -I "E:\Work Codes\ZigBee\Network\Projects\z /
+//                          stack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\.. /
+//                          \COMPONENTS\STACK\SAPI\" -I "E:\Work              /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
+//                          SYS\" -I "E:\Work Codes\ZigBee\Network\Projects\z /
+//                          stack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\.. /
+//                          \COMPONENTS\STACK\ZDO\" -I "E:\Work               /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F /
+//                          8W\" -I "E:\Work Codes\ZigBee\Network\Projects\zs /
+//                          tack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\..\ /
+//                          COMPONENTS\ZMAC\" -I "E:\Work                     /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC /
+//                          ES\SADDR\" -I "E:\Work Codes\ZigBee\Network\Proje /
+//                          cts\zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\ /
+//                          ..\..\COMPONENTS\SERVICES\SDATA\" -I "E:\Work     /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\IN /
+//                          CLUDE\" -I "E:\Work Codes\ZigBee\Network\Projects /
+//                          \zstack\Samples\TestApp_Dul\CC2530DB\..\..\..\..\ /
+//                          ..\COMPONENTS\MAC\HIGH_LEVEL\" -I "E:\Work        /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO /
+//                          W_LEVEL\srf04\" -I "E:\Work                       /
+//                          Codes\ZigBee\Network\Projects\zstack\Samples\Test /
+//                          App_Dul\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO /
+//                          W_LEVEL\srf04\SINGLE_CHIP\" -Ohz                  /
+//                          --require_prototypes                              /
+//    List file          =  E:\Work Codes\ZigBee\Network\Projects\zstack\Samp /
+//                          les\TestApp_Dul\CC2530DB\CoordinatorEB\List\oneWi /
+//                          re.s51                                            /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME oneWire
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??configOneWire?relay
+        FUNCTION ??configOneWire?relay,0203H
+        PUBLIC ??delay_ms?relay
+        FUNCTION ??delay_ms?relay,0203H
+        PUBLIC ??delay_us?relay
+        FUNCTION ??delay_us?relay,0203H
+        PUBLIC ??oneWireCheck?relay
+        FUNCTION ??oneWireCheck?relay,0203H
+        PUBLIC ??oneWireRead?relay
+        FUNCTION ??oneWireRead?relay,0203H
+        PUBLIC ??oneWireReset?relay
+        FUNCTION ??oneWireReset?relay,0203H
+        PUBLIC ??oneWireWrite?relay
+        FUNCTION ??oneWireWrite?relay,0203H
+        PUBWEAK P0DIR
+        PUBLIC PIN
+        PUBLIC PORT
+        PUBLIC PX_Y
+        PUBLIC configOneWire
+        FUNCTION configOneWire,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC delay_ms
+        FUNCTION delay_ms,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC delay_us
+        FUNCTION delay_us,080203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC oneWireCheck
+        FUNCTION oneWireCheck,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC oneWireRead
+        FUNCTION oneWireRead,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC oneWireReset
+        FUNCTION oneWireReset,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC oneWireWrite
+        FUNCTION oneWireWrite,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+configOneWire       SYMBOL "configOneWire"
+??configOneWire?relay SYMBOL "?relay", configOneWire
+delay_ms            SYMBOL "delay_ms"
+??delay_ms?relay    SYMBOL "?relay", delay_ms
+delay_us            SYMBOL "delay_us"
+??delay_us?relay    SYMBOL "?relay", delay_us
+oneWireCheck        SYMBOL "oneWireCheck"
+??oneWireCheck?relay SYMBOL "?relay", oneWireCheck
+oneWireRead         SYMBOL "oneWireRead"
+??oneWireRead?relay SYMBOL "?relay", oneWireRead
+oneWireReset        SYMBOL "oneWireReset"
+??oneWireReset?relay SYMBOL "?relay", oneWireReset
+oneWireWrite        SYMBOL "oneWireWrite"
+??oneWireWrite?relay SYMBOL "?relay", oneWireWrite
+
+// E:\Work Codes\ZigBee\Network\Projects\zstack\Samples\TestApp_Dul\Source\ExtHAL\oneWire\oneWire.c
+//    1 /**
+//    2    *******************************************************************
+//    3    * @file		oneWire.c
+//    4    * @author	RQY
+//    5    * @version	V0.1
+//    6    * @date		2016-01-30
+//    7    * @brief		这个文件提供操作单总线传感器的函数
+//    8    *******************************************************************
+//    9    */
+//   10 
+//   11 /* Includes ---------------------------------------------------------*/
+//   12 #include "oneWire.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//   13 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   14 unsigned char	PORT;
+PORT:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   15 unsigned char PIN;
+PIN:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   16 unsigned char PX_Y;
+PX_Y:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   17 
+//   18 /**
+//   19 	* @brief	复位单总线器件
+//   20 	* @param	pullLowTime: 复位单总线器件所需要的低电平脉冲的持续时间
+//   21 	* @param	pullHighTime: 释放单总线所持续的时间
+//   22 	* @return	无
+//   23 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   24 void oneWireReset(unsigned int pullLowTime, unsigned int pullHighTime)
+oneWireReset:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function oneWireReset
+        CODE
+//   25 {
+        FUNCALL oneWireReset, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireReset, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireReset, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//   26 	outputMode();
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     DPTR,#PIN
+        MOVX    A,@DPTR
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ORL     0xfd,A
+//   27 	outputHigh();
+//   28 	delay_us(50);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x32
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   29 	outputLow();							// pull the 1-wire bus low
+//   30 	delay_us(pullLowTime);		// pull the 1-wire bus low for reset pulse,  at least 480us
+        ; Setup parameters for call to function delay_us
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ?Subroutine1 & 0xFFFF
+//   31 	outputHigh();							// pull the 1-wire bus high for releases the bus
+//   32 	delay_us(pullHighTime);		// wait-out remaining initialisation window.
+??CrossCallReturnLabel_0:
+        ; Setup parameters for call to function delay_us
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??delay_us?relay
+//   33 }
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+        REQUIRE P0DIR
+//   34 
+//   35 /**
+//   36 	* @brief	检测单总线上是否有器件存在
+//   37 	* @param	waitRspTime: 等待单总线器件发出响应信号的时间
+//   38 	* @param	isSlavePullHigh: 单总线发出响应信号后，总线是否被单总线器件拉高；
+//   39 			此参数可为一下两个值：
+//   40 	*			@arg owTRUE: 单总线被器件主动拉高
+//   41 	*			@arg owFLASE:	单总线被上拉电阻拉高
+//   42 	* @return	unsigned char: 若单总线上存在器件，则返回owSuccess；否则，返回owFailure
+//   43 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   44 unsigned char oneWireCheck(unsigned int waitRspTime, unsigned char isSlavePullHigh)
+oneWireCheck:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function oneWireCheck
+        CODE
+//   45 {
+        FUNCALL oneWireCheck, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireCheck, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireCheck, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireCheck, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//   46 	unsigned char retry = 0;
+        MOV     R6,#0x0
+//   47 	
+//   48 	delay_us(waitRspTime);
+        ; Setup parameters for call to function delay_us
+        LCALL   ??delay_us?relay
+//   49 	// Slave response ouput low level
+//   50 	while ( readPin() && retry < 100)
+        MOV     DPTR,#PX_Y
+        MOVX    A,@DPTR
+        JZ      ??oneWireCheck_0
+//   51 	{
+//   52 		retry++;
+??oneWireCheck_1:
+        INC     R6
+//   53 		delay_us(1);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x64
+        JC      ??oneWireCheck_1
+//   54 	}
+//   55 	if (retry >= 100)
+//   56 		return owFailure;
+??oneWireCheck_2:
+        MOV     R1,#0x1
+        SJMP    ??oneWireCheck_3
+//   57 	
+//   58 	if (isSlavePullHigh)
+??oneWireCheck_0:
+        MOV     A,R7
+        JZ      ??oneWireCheck_4
+//   59 	{
+//   60 		retry = 0;
+//   61 		while (!readPin() && retry < 100)
+//   62 		{
+//   63 			retry++;
+??oneWireCheck_5:
+        INC     R6
+//   64 			delay_us(1);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x64
+        JNC     ??oneWireCheck_2
+        SJMP    ??oneWireCheck_5
+//   65 		}
+//   66 		if (retry >= 100)
+//   67 			return owFailure;
+//   68 	}
+//   69 	else
+//   70 	{
+//   71 		outputHigh();		// releases the bus.
+??oneWireCheck_4:
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//   72 		delay_us(100);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   73 	}
+//   74 	
+//   75 	return owSuccess;
+        MOV     R1,#0x0
+        CFI EndBlock cfiBlock1
+??oneWireCheck_3:
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//   76 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//   77 
+//   78 /**
+//   79 	* @brief	写一字节到单总线器件
+//   80 	* @param	data: 写到单总线器件中的数据
+//   81 	* @return	无
+//   82 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   83 void oneWireWrite(unsigned char data)
+oneWireWrite:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function oneWireWrite
+        CODE
+//   84 {
+        FUNCALL oneWireWrite, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireWrite, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireWrite, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireWrite, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//   85 	int count;
+//   86 	
+//   87 	for (count = 0; count < 8; count++)
+        MOV     DPTR,#PX_Y
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        MOV     R6,#0x8
+//   88 	{
+//   89 		outputLow();
+//   90 		delay_us(2);				// pull the 1-wire bus low to initiate write time-slot.
+??oneWireWrite_0:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   91 		if ( data & 0x01 )
+//   92 			outputHigh();			// releases the bus for write 1 to the Slave.
+//   93 		delay_us(30);				// wait until end of write slot.
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1e
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   94 		outputHigh();				// set the 1-wire bus high again for releases the bus.		
+//   95 		delay_us(2);				// for more than 1us minimum.
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   96 		data >>= 1;
+//   97 	}
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??oneWireWrite_0
+//   98 	delay_us(5);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x5
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//   99 }
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock3
+//  100 
+//  101 /**
+//  102 	* @brief	从单总线器件中读一字节
+//  103 	* @param	isLSB: 读出的数据是否低位在先，
+//  104 			这个参数值可以是owTRUE，或者owFLASE
+//  105 	* @param	isSlaveOutputReadTimeSlot: 单总线器件是否主动发出读时序，
+//  106 			这个参数值可以是owTRUE，或者owFLASE
+//  107 	* @return	unsigned char: 从单总线器件中读出的数据
+//  108 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  109 unsigned char oneWireRead(unsigned char isLSB, unsigned char isSlaveOutputReadTimeSlot)
+oneWireRead:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function oneWireRead
+        CODE
+//  110 {
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL oneWireRead, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     ?V0 + 1,R1
+        MOV     ?V0 + 2,R2
+//  111 	unsigned char count, retry = 0;
+        MOV     R7,#0x0
+//  112 	unsigned char data = 0;
+        MOV     R6,#0x0
+//  113 	
+//  114 	for (count = 0; count < 8; count++)
+        MOV     ?V0 + 0,#0x8
+//  115 	{		
+//  116 		if (isSlaveOutputReadTimeSlot)
+??oneWireRead_0:
+        MOV     A,?V0 + 2
+        JZ      ??oneWireRead_1
+//  117 		{
+//  118 			while (readPin() && retry < 100)	// wait the slave output read time-slot
+        MOV     DPTR,#PX_Y
+        MOVX    A,@DPTR
+        JNZ     ??oneWireRead_2
+        SJMP    ??oneWireRead_3
+//  119 			{
+//  120 				retry++;
+??oneWireRead_4:
+        INC     R7
+//  121 				delay_us(1);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+??oneWireRead_2:
+        MOV     A,R7
+        CLR     C
+        SUBB    A,#0x64
+        JC      ??oneWireRead_4
+//  122 			}
+//  123 			retry = 0;
+??oneWireRead_3:
+        MOV     R7,#0x0
+//  124 			
+//  125 			while (!readPin() && retry < 100)
+        MOV     DPTR,#PX_Y
+        MOVX    A,@DPTR
+        JNZ     ??oneWireRead_5
+//  126 			{
+//  127 				retry++;
+??oneWireRead_6:
+        INC     R7
+//  128 				delay_us(1);
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+        MOV     A,R7
+        CLR     C
+        SUBB    A,#0x64
+        JC      ??oneWireRead_6
+//  129 			}
+//  130 			delay_us(30);	
+??oneWireRead_5:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x1e
+        SJMP    ??oneWireRead_7
+//  131 		}
+//  132 		else
+//  133 		{
+//  134 			outputLow();
+//  135 			delay_us(2);			// pull the 1-wire bus low to initiate read time-slot.			
+??oneWireRead_1:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   ?Subroutine1 & 0xFFFF
+//  136 			outputHigh();			// now let the 1-wire bus high for sample data of the Slave.
+//  137 			delay_us(8);			// let device state stabilise.
+??CrossCallReturnLabel_1:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x8
+??oneWireRead_7:
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//  138 		}
+//  139 		
+//  140 		if ( isLSB )
+        MOV     A,?V0 + 1
+        JZ      ??oneWireRead_8
+//  141 			data >>= 1;			// LSB first.
+        MOV     A,R6
+        CLR     C
+        RRC     A
+        SJMP    ??oneWireRead_9
+//  142 		else 
+//  143 			data <<= 1;			// MSB first
+??oneWireRead_8:
+        MOV     A,R6
+        CLR     C
+        RLC     A
+??oneWireRead_9:
+        MOV     R6,A
+//  144 		
+//  145 		if ( readPin() == 1 )
+        MOV     DPTR,#PX_Y
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??oneWireRead_10
+//  146 			data |= 0x80;
+        MOV     A,R6
+        SETB    0xE0 /* A   */.7
+        MOV     R6,A
+//  147 		delay_us(60);			// wait until end of read slot.
+??oneWireRead_10:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#0x3c
+        MOV     R3,#0x0
+        LCALL   ??delay_us?relay
+//  148 		//data >>= 1;			// error		
+//  149 	}
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JNZ     ??oneWireRead_0
+//  150 	
+//  151 	return data;
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  152 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiCond5 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        CFI Block cfiCond6 Using cfiCommon0
+        CFI (cfiCond6) NoFunction
+        CFI (cfiCond6) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond6) R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond6) VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond6) V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond6) V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond6) V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond6) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond6) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond6) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond6) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond6) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond6) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond6) CFA_SP SP+0
+        CFI (cfiCond6) CFA_XSP16 add(XSP16, 11)
+        CFI Block cfiPicker7 Using cfiCommon1
+        CFI (cfiPicker7) NoFunction
+        CFI (cfiPicker7) Picker
+        LCALL   ??delay_us?relay
+        MOV     DPTR,#PX_Y
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        RET
+        CFI EndBlock cfiCond5
+        CFI EndBlock cfiCond6
+        CFI EndBlock cfiPicker7
+//  153 
+//  154 
+//  155 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  156 void configOneWire(unsigned char port, unsigned char pin, unsigned char px_y)
+configOneWire:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function configOneWire
+        CODE
+//  157 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  158 	PORT = port;
+        MOV     A,R1
+        MOV     DPTR,#PORT
+        MOVX    @DPTR,A
+//  159 	PIN = pin;
+        MOV     A,R2
+        MOV     DPTR,#PIN
+        MOVX    @DPTR,A
+//  160 	PX_Y = px_y;
+        MOV     A,R3
+        MOV     DPTR,#PX_Y
+        MOVX    @DPTR,A
+//  161 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+//  162 
+//  163 /**
+//  164 	* @brief	微妙延时
+//  165 	* @param	us: 需要延时的时间
+//  166 	* @return	无
+//  167 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  168 void delay_us(unsigned int us)
+delay_us:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function delay_us
+        CODE
+//  169 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        SJMP    ??delay_us_0
+//  170 	while ( us-- )
+//  171 	{
+//  172 			asm("NOP");
+??delay_us_1:
+        NOP
+//  173 			asm("NOP");
+        NOP
+//  174 			asm("NOP");
+        NOP
+//  175 			asm("NOP");
+        NOP
+//  176 	}
+??delay_us_0:
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R2
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??delay_us_1
+//  177 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+//  178 
+//  179 /**
+//  180 	* @brief	微妙延时
+//  181 	* @param	ms: 需要延时的时间
+//  182 	* @return	无
+//  183 	*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  184 void delay_ms(unsigned int ms)
+delay_ms:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function delay_ms
+        CODE
+//  185 {
+        FUNCALL delay_ms, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        SJMP    ??delay_ms_0
+//  186 	while ( ms-- )
+//  187 	{
+//  188 		delay_us(1000);
+??delay_ms_1:
+        ; Setup parameters for call to function delay_us
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??delay_us?relay
+//  189 	}
+??delay_ms_0:
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R7,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??delay_ms_1
+//  190 }
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock10
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??oneWireReset?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    oneWireReset
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??oneWireCheck?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    oneWireCheck
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??oneWireWrite?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    oneWireWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??oneWireRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    oneWireRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??configOneWire?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    configOneWire
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??delay_us?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    delay_us
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??delay_ms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    delay_ms
+
+        END
+//  191 
+//  192 
+//  193 
+//  194 
+//  195 
+//  196 
+//  197 
+// 
+// 402 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//   1 byte  in segment SFR_AN
+//   3 bytes in segment XDATA_Z
+// 
+// 444 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 1 byte shared)
+//   3 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none
