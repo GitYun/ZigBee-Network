@@ -1,0 +1,3 @@
+---- keyChange_t Matches (3 in 2 files) ----
+Sapi.c (e:\work codes\zigbee\network\components\stack\sapi):          zb_HandleKeys( ((keyChange_t *)pMsg)->state, ((keyChange_t *)pMsg)->keys );
+TestApp.c (e:\work codes\zigbee\network\projects\zstack\samples\testapp\source):          TestApp_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
